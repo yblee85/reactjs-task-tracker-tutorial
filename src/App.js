@@ -21,13 +21,13 @@ function App() {
   }, [])
 
   const fetchTasks = async () => {
-    const res = await fetch("http://localhost:5000/tasks");
+    const res = await fetch("/tasks");
     const data = await res.json();
     return data;
   }
 
   const fetchTask = async ({id}) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`);
+    const res = await fetch(`/tasks/${id}`);
     const data = await res.json();
     return data;
   }
@@ -37,7 +37,7 @@ function App() {
   }
 
   const onDelete = async (key) => {
-      const res = await fetch(`http://localhost:5000/tasks/${key}`, {
+      const res = await fetch(`/tasks/${key}`, {
         method: "DELETE"
       });  
 
@@ -52,7 +52,7 @@ function App() {
           text, day, reminder
       };
 
-      const res = await fetch(`http://localhost:5000/tasks`, {
+      const res = await fetch(`/tasks`, {
         method: "POST",
         headers : {
           'Content-type': 'application/json'
@@ -74,7 +74,7 @@ function App() {
     console.log(foundTask);
 
     foundTask.reminder = !foundTask.reminder;
-    const res = await fetch(`http://localhost:5000/tasks/${key}`, {
+    const res = await fetch(`/tasks/${key}`, {
       method: "PUT",
       headers : {
         'Content-type': 'application/json'
