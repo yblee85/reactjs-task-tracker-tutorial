@@ -20,4 +20,6 @@ COPY . ./
 CMD ["nohup" "npm", "run", "server", "&"]
 
 # start app
-CMD ["npm", "start"]
+# dev version
+#CMD ["npm", "start"]    
+CMD ["serve" "-s" "build"]
