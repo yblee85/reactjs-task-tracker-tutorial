@@ -1,6 +1,5 @@
 build:
   docker:
     web: Dockerfile
-    server: server/Dockerfile
     db: db/Dockerfile
   
