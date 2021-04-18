@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  
+  frontend:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    networks:
+      - front-tier
+      - back-tier
+    ports:
+    - '8080:3001'
+
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: ./db
+    ports:
+      - '3000:3000'
+    networks:
+      - back-tier
+
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier: {}
+  back-tier: {}
+  
