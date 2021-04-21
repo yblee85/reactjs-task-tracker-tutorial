@@ -2,24 +2,51 @@ version: "3"
 
 services:
   
-  frontend:
+  webapp:
     build: 
       dockerfile: Dockerfile
-      context: .
+      context: ./webapp
+    # ports:
+    #   - '3001:80'
+    expose: ['80']
     networks:
       - front-tier
       - back-tier
-    ports:
-    - '8080:3001'
 
-  backend:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+    # ports:
+    #   - '3002:3002'
+    expose: ['3002']
+    networks:
+      - back-tier
+    depends_on: 
+      - db
+
+  db:
     build:
       dockerfile: Dockerfile
       context: ./db
-    ports:
-      - '3000:3000'
+    # ports:
+    #   - '3000:3000'
+    expose: ['3000']
     networks:
       - back-tier
+
+  revproxy:
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports: 
+      - '8080:80'
+    networks:
+      - front-tier
+      - back-tier
+    depends_on: 
+      - webapp
+      - api
 
 networks:
   # The presence of these objects is sufficient to define them
