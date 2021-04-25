@@ -1,0 +1,23 @@
+{
+  "name": "task-tracker",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "dependencies": {
+    "underscore": "^1.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://cab2c25439c4338650d6491fd528054d02a478a1@github.com/yblee85/reactjs-task-tracker-tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yblee85/reactjs-task-tracker-tutorial/issues"
+  },
+  "homepage": "https://github.com/yblee85/reactjs-task-tracker-tutorial#readme"
+}

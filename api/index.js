@@ -15,6 +15,7 @@ const app = express();
 
 
  
+// only for demo purose
 app.use('/api', proxy('http://db:3000'));
 
 
