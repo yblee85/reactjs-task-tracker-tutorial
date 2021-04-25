@@ -26,8 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
-    - name: Build and Test
-      working-directory: ./webapp
+#     - name: Build and Test
+#       working-directory: ./webapp
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
