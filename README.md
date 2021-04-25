@@ -1,7 +1,6 @@
+![Build Status](https://github.com/yblee85/reactjs-task-tracker-tutorial/workflows/webapp_build_test/badge.svg)
+
 # Getting Started with task tracker tutorial with docker 
-
-## Build Status: ![Build Status](https://github.com/yblee85/reactjs-task-tracker-tutorial/workflows/webapp_build_test/badge.svg)
-
 This tutorial is based on Brad Traversery Task Tracker react app (https://github.com/bradtraversy/react-crash-2021)
 I dockernized it / separate db (for now using simple json-server for testing) / add api and reverse proxy
 and finally docker-compose to bring all together.
