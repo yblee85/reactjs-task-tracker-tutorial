@@ -3,12 +3,12 @@
 
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import './index.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import About from './components/About/About';
-import Tasks from './components/Tasks/Tasks'
-import AddTask from './components/AddTask/AddTask'
+// import '../../index.css';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import About from '../About/About';
+import Tasks from '../Tasks/Tasks'
+import AddTask from '../AddTask/AddTask'
 
 function App() {
   const [ nextId, setNextId ] = useState(5)
@@ -101,7 +101,6 @@ function App() {
     <div className="container">
       <Router>
         <Header title="Task Tracker" onClickAdd={onClickAdd} />
-        
         
         <Route path="/" exact render={(props)=>(
           <>
